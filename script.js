@@ -92,3 +92,9 @@ function displayExercise(data){
 
 //Click Search Button
 document.getElementById("searchButton").addEventListener("click",displayExercise)
+
+
+//Function for Submit button for daily log
+function update() {
+    document.getElementById('target').value = document.getElementById('source').value;
+}
