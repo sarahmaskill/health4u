@@ -30,9 +30,16 @@
     </section>
     <aside id="journal">
         <h2>Track Your Workout!</h2>
-        <textarea rows = "5" cols = "70" name = "description">
-            Log those gains! (Enter your workout here)
-         </textarea>
+        <textarea id='box1'></textarea>
+        <textarea id='box2'></textarea>
+        <button onclick='onSubmitClick();'>Log my progress</button><script>
+    function onSubmitClick() {
+      var box1 = document.getElementById('box1');
+      var box2 = document.getElementById('box2'); 
+      box2.value = box2.value + box1.value;
+    }
+    </script>
+    
     </aside>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="script.js"></script>

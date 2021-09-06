@@ -77,3 +77,8 @@ function displayExercise(response){
     var exerciseDiv = document.getElementById("exercise")
     //var exerciseName = exercise.
 }
+
+//Function for Submit button for daily log
+function update() {
+    document.getElementById('target').value = document.getElementById('source').value;
+}
