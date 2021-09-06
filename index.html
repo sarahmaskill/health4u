@@ -5,17 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Health4U</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+    <header class="center-align">
         <h1>Health4U</h1>
     </header>
-    <nav>
+    <nav class="center-align">
         <h2>"Insert Weather Module"</h2>
     </nav>
-<main>
-    <section id="exerciseSearch">
+<main class="row">
+   <div id="left side" class="col s6 center-align">
+    <section class="card-panel teal" id="exerciseSearch">
         <h2>Find Your Workout!</h2>
         <select id="selectBP">
             <option>Search By Bodypart</option>
@@ -23,20 +25,21 @@
         <select id="selectEquipment">
             <option>Search By Equipment</option>
         </select>
-        <button type="button" id="searchButton">Search</button>
+        <button type="button" id="searchButton" class="waves-effect waves-light btn">Search</button>
         <div id="exercise">
 
         </div>
    
     </section>
-    <section id="timer">
+    <section class="card-panel teal center-align" id="timer">
         <h2>Time Your Workout!</h2>
     </section>
-    <aside id="journal">
+  </div>
+    <aside class="col s6 center-align" id="journal">
         <h2>Track Your Workout!</h2>
         <textarea id='box1'></textarea>
         <textarea id='box2'></textarea>
-        <button onclick='onSubmitClick();'>Log my progress</button><script>
+        <button class="waves-effect waves-light btn" onclick='onSubmitClick();'>Log my progress</button><script>
     function onSubmitClick() {
       var box1 = document.getElementById('box1');
       var box2 = document.getElementById('box2'); 
