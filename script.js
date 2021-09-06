@@ -57,7 +57,7 @@ for(var i = 0; i < equipment.length; i++) {
 }
 
 //Fetch Data from exercise API
-fetch("https://exercisedb.p.rapidapi.com/exercises/equipment/tire", {
+fetch("https://exercisedb.p.rapidapi.com/exercises", {
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "exercisedb.p.rapidapi.com",
@@ -74,24 +74,26 @@ fetch("https://exercisedb.p.rapidapi.com/exercises/equipment/tire", {
 })
 .then(data => {
     console.log(data);
+    console.log (data[0].name)
+    displayExercise(data)
 })
 .catch((error) => console.error("FETCH ERROR:", error));
 
 //Function to Display 
 function displayExercise(data){
-    var exercise = data.object[0];
+    var exercises =  data[Math.floor(Math.random()*data.length)]
     var exerciseDiv = document.getElementById("exercise");
-    var exerciseName = exercise.name;
     var heading = document.createElement("h2");
-    heading.innerHTML = exerciseName;
+    heading.innerHTML = exercises.name;
     exerciseDiv.appendChild(heading)
     var exerciseGif = document.createElement("img");
-    exerciseGif.src = exercise.gifUrl;
-
+    exerciseGif.src = exercises.gifUrl;
+    exerciseDiv.appendChild(exerciseGif)
 }
 
 //Click Search Button
 document.getElementById("searchButton").addEventListener("click",displayExercise)
+
 
 
 //Function for Submit button for daily log
