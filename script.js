@@ -65,18 +65,34 @@ fetch("https://exercisedb.p.rapidapi.com/exercises/equipment/tire", {
 	}
 })
 .then(response => {
-	console.log(response);
+	if (response.ok){
+        return response.json();
+    }
+    else {
+        throw new Error("Network Response Error")
+    }
 })
-.catch(err => {
-	console.error(err);
-});
+.then(data => {
+    console.log(data);
+})
+.catch((error) => console.error("FETCH ERROR:", error));
 
 //Function to Display 
-function displayExercise(response){
-    var exercise = response.body
-    var exerciseDiv = document.getElementById("exercise")
-    //var exerciseName = exercise.
+function displayExercise(data){
+    var exercise = data.object[0];
+    var exerciseDiv = document.getElementById("exercise");
+    var exerciseName = exercise.name;
+    var heading = document.createElement("h2");
+    heading.innerHTML = exerciseName;
+    exerciseDiv.appendChild(heading)
+    var exerciseGif = document.createElement("img");
+    exerciseGif.src = exercise.gifUrl;
+
 }
+
+//Click Search Button
+document.getElementById("searchButton").addEventListener("click",displayExercise)
+
 
 //Function for Submit button for daily log
 function update() {
