@@ -57,7 +57,7 @@ for(var i = 0; i < equipment.length; i++) {
 }
 
 //Fetch Data from exercise API
-fetch("https://exercisedb.p.rapidapi.com/exercises/equipment/tire", {
+fetch("https://exercisedb.p.rapidapi.com/exercises", {
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "exercisedb.p.rapidapi.com",
@@ -65,15 +65,31 @@ fetch("https://exercisedb.p.rapidapi.com/exercises/equipment/tire", {
 	}
 })
 .then(response => {
-	console.log(response);
+	if (response.ok){
+        return response.json();
+    }
+    else {
+        throw new Error("Network Response Error")
+    }
 })
-.catch(err => {
-	console.error(err);
-});
+.then(data => {
+    console.log(data);
+    displayExercise(data)
+})
+.catch((error) => console.error("FETCH ERROR:", error));
 
 //Function to Display 
-function displayExercise(response){
-    var exercise = response.body
-    var exerciseDiv = document.getElementById("exercise")
-    //var exerciseName = exercise.
+function displayExercise(data){
+    var exercise = data.exercise[0];
+    var exerciseDiv = document.getElementById("exercise");
+    var exerciseName = exercise.name;
+    var heading = document.createElement("h2");
+    heading.innerHTML = exerciseName;
+    exerciseDiv.appendChild(heading)
+    var exerciseGif = document.createElement("img");
+    exerciseGif.src = exercise.gifUrl;
+
 }
+
+//Click Search Button
+document.getElementById("searchButton").addEventListener("click",displayExercise)
