@@ -57,7 +57,7 @@ for(var i = 0; i < equipment.length; i++) {
 }
 
 //Fetch Data from exercise API
-fetch("https://exercisedb.p.rapidapi.com/exercises", {
+fetch("https://exercisedb.p.rapidapi.com/exercises/equipment/tire", {
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "exercisedb.p.rapidapi.com",
@@ -74,13 +74,12 @@ fetch("https://exercisedb.p.rapidapi.com/exercises", {
 })
 .then(data => {
     console.log(data);
-    displayExercise(data)
 })
 .catch((error) => console.error("FETCH ERROR:", error));
 
 //Function to Display 
 function displayExercise(data){
-    var exercise = data.exercise[0];
+    var exercise = data.object[0];
     var exerciseDiv = document.getElementById("exercise");
     var exerciseName = exercise.name;
     var heading = document.createElement("h2");
