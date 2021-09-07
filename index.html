@@ -39,17 +39,22 @@
     </section>
   </div>
     <aside class="col s6 center-align" id="journal">
+    <div>
         <h2>Track Your Workout!</h2>
         <textarea id='box1'></textarea>
         <textarea id='box2'></textarea>
-        <button class="waves-effect waves-light btn" onclick='onSubmitClick();'>Log my progress</button><script>
-    function onSubmitClick() {
-      var box1 = document.getElementById('box1');
-      var box2 = document.getElementById('box2'); 
-      box2.value = box2.value + box1.value;
-    }
-    </script>
-    
+        <button class="waves-effect waves-light btn" onclick='onSubmitClick();'>Log my progress</button>
+        <script>
+            function onSubmitClick() {
+                var box1 = document.getElementById('box1');
+                var box2 = document.getElementById('box2'); 
+                box2.value = box2.value + box1.value;
+             }
+        </script>
+    </div>
+    <div id="spotify player">
+        <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DWUSyphfcc6aL?theme=0" width="100%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    </div>
     </aside>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="script.js"></script>
