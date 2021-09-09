@@ -1,6 +1,6 @@
 //Add Dropdown for Body Parts
 var selectBP = document.getElementById("selectBP");
-var bodyparts = [  "back",
+var bodypartArray = [  "back",
 "cardio",
 "chest",
 "lower arms",
@@ -10,8 +10,8 @@ var bodyparts = [  "back",
 "upper arms",
 "upper legs",
 "waist"];
-for(var i = 0; i < bodyparts.length; i++) {
-    var opt = bodyparts[i];
+for(var i = 0; i < bodypartArray.length; i++) {
+    var opt = bodypartArray[i];
     var el = document.createElement("option");
     el.textContent = opt;
     el.value = opt;
@@ -19,7 +19,7 @@ for(var i = 0; i < bodyparts.length; i++) {
 }
 //Add Dropdown for Equipment
 var selectEquipment = document.getElementById("selectEquipment");
-var equipment = [ "assisted",
+var equipmentArray = [ "assisted",
 "band",
 "barbell",
 "body weight",
@@ -48,8 +48,8 @@ var equipment = [ "assisted",
 "weighted",
 "wheel roller"
 ];
-for(var i = 0; i < equipment.length; i++) {
-    var opt = equipment[i];
+for(var i = 0; i < equipmentArray.length; i++) {
+    var opt = equipmentArray[i];
     var el = document.createElement("option");
     el.textContent = opt;
     el.value = opt;
@@ -76,9 +76,26 @@ fetch("https://exercisedb.p.rapidapi.com/exercises", {
     console.log(data);
     console.log (data[0].name)
     displayExercise(data)
+    bodypartLoop(data)
+    //equipmentLoop(data)
 })
 .catch((error) => console.error("FETCH ERROR:", error));
 
+//Function to compare bodypart 
+function bodypartLoop(data){
+var bodypartResult = ""
+    for (let i=0; i < data.length; i++){
+        if (data[i].bodypart==="lower arms") {
+            bodypartResult += data[i]
+        }
+    }
+    console.log(bodypartResult)
+}
+
+//Function to compare Equipment 
+//function equipment(data){
+
+//}
 //Function to Display 
 function displayExercise(data){
     var exercises =  data[Math.floor(Math.random()*data.length)]
@@ -100,3 +117,8 @@ document.getElementById("searchButton").addEventListener("click",displayExercise
 function update() {
     document.getElementById('target').value = document.getElementById('source').value;
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems);
+  });
