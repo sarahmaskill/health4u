@@ -122,3 +122,41 @@ document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('select');
     var instances = M.FormSelect.init(elems);
   });
+
+  //Weather Section
+  var apiKey = "dd1155503169dbd265f7df771042e355"
+var city = document.getElementById("cityName").value
+var searchBTN = document.getElementById("searchBTN")
+
+//fetch current weather for a city
+function currentWeather(cityName){
+fetch('https://api.openweathermap.org/data/2.5/weather?q=' + cityName+ '&units=imperial&appid=' + apiKey)
+.then(function(resp) { return resp.json() }) // Convert data to json
+  .then(function(data) {
+    console.log(data)
+    drawWeather(data)
+  })
+  .catch(function() {
+    // catch any errors
+  });
+}
+
+function cityRequest() {
+    currentWeather("Detroit");
+  }
+//function cityRequest() {
+ //var city = document.getElementById("cityName").value
+   //if (city.length < 1) return;
+   //else drawWeather("" + city);
+  //}
+function drawWeather( d ) {
+    var iconNumber = d.weather[0].icon
+    document.getElementById("conditionIcon").src="http://openweathermap.org/img/wn/" + iconNumber +"@2x.png"
+	document.getElementById('description').innerHTML = d.weather[0].description;
+	document.getElementById('temp').innerHTML = d.main.temp;
+	document.getElementById('location').innerHTML = d.name;
+    document.getElementById('humidity').innerHTML = d.main.humidity + "%";
+   document.getElementById('date').innerHTML =d.dt;
+
+}
+searchBTN.addEventListener("click",cityRequest)
