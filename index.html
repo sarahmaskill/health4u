@@ -46,13 +46,14 @@
     <div>
         <h2>Track Your Workout!</h2>
         <textarea id='box1'></textarea>
-        <textarea id='box2'></textarea>
+        <textarea id='box2'> 
+        </textarea>
         <button class="waves-effect waves-light btn" onclick='onSubmitClick();'>Log my progress</button>
         <script>
             function onSubmitClick() {
                 var box1 = document.getElementById('box1');
                 var box2 = document.getElementById('box2'); 
-                box2.value = box2.value + box1.value;
+                box2.value= box2.value +" "+ box1.value; localStorage
              }
         </script>
     </div>

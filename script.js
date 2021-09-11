@@ -57,7 +57,7 @@ for(var i = 0; i < equipmentArray.length; i++) {
 }
 
 //Fetch Data from exercise API
-fetch("https://exercisedb.p.rapidapi.com/exercises", {
+fetch("https://exercisedb.p.rapidapi.com/exercises/equipment/tire", {
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "exercisedb.p.rapidapi.com",
@@ -65,13 +65,11 @@ fetch("https://exercisedb.p.rapidapi.com/exercises", {
 	}
 })
 .then(response => {
-	if (response.ok){
-        return response.json();
-    }
-    else {
-        throw new Error("Network Response Error")
-    }
+	console.log(response);
 })
+.catch(err => {
+	console.error(err);
+});
 .then(data => {
     console.log(data);
     displayExercise(data);
@@ -115,11 +113,7 @@ fetch("https://exercisedb.p.rapidapi.com/exercises", {
     document.getElementById("equipmentBTN").addEventListener("click",randomEquipment)
 })
 
-
 .catch((error) => console.error("FETCH ERROR:", error));
-
-//Function to filter by bodypart
-
 
 //Function to Display 
 function displayExercise(data){
@@ -169,6 +163,7 @@ function cityRequest() {
    //if (city.length < 1) return;
    //else drawWeather("" + city);
   //}
+      
 function drawWeather( d ) {
     var iconNumber = d.weather[0].icon
     document.getElementById("conditionIcon").src="http://openweathermap.org/img/wn/" + iconNumber +"@2x.png"
@@ -186,4 +181,3 @@ document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('select');
     var instances = M.FormSelect.init(elems);
   });
-
