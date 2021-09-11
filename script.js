@@ -57,7 +57,7 @@ for(var i = 0; i < equipment.length; i++) {
 }
 
 //Fetch Data from exercise API
-fetch("https://exercisedb.p.rapidapi.com/exercises", {
+fetch("https://exercisedb.p.rapidapi.com/exercises/equipment/tire", {
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "exercisedb.p.rapidapi.com",
@@ -65,38 +65,21 @@ fetch("https://exercisedb.p.rapidapi.com/exercises", {
 	}
 })
 .then(response => {
-	if (response.ok){
-        return response.json();
-    }
-    else {
-        throw new Error("Network Response Error")
-    }
+	console.log(response);
 })
-.then(data => {
-    console.log(data);
-    console.log (data[0].name)
-    displayExercise(data)
-})
-.catch((error) => console.error("FETCH ERROR:", error));
+.catch(err => {
+	console.error(err);
+});
 
 //Function to Display 
-function displayExercise(data){
-    var exercises =  data[Math.floor(Math.random()*data.length)]
-    var exerciseDiv = document.getElementById("exercise");
-    var heading = document.createElement("h2");
-    heading.innerHTML = exercises.name;
-    exerciseDiv.appendChild(heading)
-    var exerciseGif = document.createElement("img");
-    exerciseGif.src = exercises.gifUrl;
-    exerciseDiv.appendChild(exerciseGif)
+function displayExercise(response){
+    var exercise = response.body
+    var exerciseDiv = document.getElementById("exercise")
+    //var exerciseName = exercise.
 }
 
-//Click Search Button
-document.getElementById("searchButton").addEventListener("click",displayExercise)
-
-
-
-//Function for Submit button for daily log
+//Submit button for daily log
 function update() {
     document.getElementById('target').value = document.getElementById('source').value;
 }
+
