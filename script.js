@@ -74,28 +74,53 @@ fetch("https://exercisedb.p.rapidapi.com/exercises", {
 })
 .then(data => {
     console.log(data);
-    console.log (data[0].name)
-    displayExercise(data)
-    bodypartLoop(data)
-    //equipmentLoop(data)
+    displayExercise(data);
+    
+    //Body Part Function to Randomize
+    let bpResult = data.filter(part => {
+        return part.bodyPart === 
+    });   
+    //Body Part Function for Data
+    function randomBP (){
+        var bodypartRandomizer =  bpResult[Math.floor(Math.random()*data.length)]
+        var bpDiv = document.getElementById("bpResult");
+        var heading = document.createElement("h2");
+        heading.innerHTML = bodypartRandomizer.name;
+        bpDiv.appendChild(heading)
+        var exerciseGif = document.createElement("img");
+        exerciseGif.src = bodypartRandomizer.gifUrl;
+        bpDiv.appendChild(exerciseGif)
+    
+    }
+    //click button to filter for body part 
+    document.getElementById("bodypartBTN").addEventListener("click",randomBP)
+
+    //Equipment Filter
+    let equipmentResult = data.filter(equipmentPull => {
+        return equipmentPull.equipment === 
+    });
+
+    //Equipment Function to Randomize
+    function randomEquipment (){
+        var equipmentRandomizer =  equipmentResult[Math.floor(Math.random()*data.length)]
+        var equipmentDiv = document.getElementById("equipmentResult");
+        var heading = document.createElement("h2");
+        heading.innerHTML = equipmentRandomizer.name;
+        equipmentDiv.appendChild(heading)
+        var exerciseGif = document.createElement("img");
+        exerciseGif.src = equipmentRandomizer.gifUrl;
+        equipmentDiv.appendChild(exerciseGif)
+    }
+    //Click button to filter for Equipment
+    document.getElementById("equipmentBTN").addEventListener("click",randomEquipment)
 })
+
+
 .catch((error) => console.error("FETCH ERROR:", error));
 
-//Function to compare bodypart 
-function bodypartLoop(data){
-var bodypartResult = ""
-    for (let i=0; i < data.length; i++){
-        if (data[i].bodypart==="lower arms") {
-            bodypartResult += data[i]
-        }
-    }
-    console.log(bodypartResult)
-}
+//Function to filter by bodypart
 
-//Function to compare Equipment 
-//function equipment(data){
 
-//}
 //Function to Display 
 function displayExercise(data){
     var exercises =  data[Math.floor(Math.random()*data.length)]
@@ -106,25 +131,20 @@ function displayExercise(data){
     var exerciseGif = document.createElement("img");
     exerciseGif.src = exercises.gifUrl;
     exerciseDiv.appendChild(exerciseGif)
+
+    return displayExercise
 }
 
 //Click Search Button
 document.getElementById("searchButton").addEventListener("click",displayExercise)
-
-
 
 //Function for Submit button for daily log
 function update() {
     document.getElementById('target').value = document.getElementById('source').value;
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('select');
-    var instances = M.FormSelect.init(elems);
-  });
-
-  //Weather Section
-  var apiKey = "dd1155503169dbd265f7df771042e355"
+//Weather Section
+var apiKey = "dd1155503169dbd265f7df771042e355"
 var city = document.getElementById("cityName").value
 var searchBTN = document.getElementById("searchBTN")
 
@@ -160,3 +180,10 @@ function drawWeather( d ) {
 
 }
 searchBTN.addEventListener("click",cityRequest)
+
+//JS for CSS Framework
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems);
+  });
+
