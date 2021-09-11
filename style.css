@@ -8,7 +8,7 @@ body{
 
 main{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 
@@ -118,7 +118,7 @@ padding: 0px 10px 0px 10px;
 
 .section-timer{
 display: flex;
-justify-content: center;
+justify-content: left;
 margin: auto;
 }
 
@@ -281,5 +281,5 @@ background-color: #c9c9c9;
 }
 
 textarea{
-  color:white;
+  color:rgb(27, 192, 21);
 }
