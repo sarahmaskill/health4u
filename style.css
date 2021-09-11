@@ -8,6 +8,7 @@ h3{
   font-size: small;
 }
 img{
+<<<<<<< HEAD
 width: 100%;
 height: 100%;
 object-fit: contain;
@@ -17,3 +18,15 @@ object-fit: contain;
 textarea{
 color:white;
 }
+=======
+ width: 100%;
+ height: 100%;
+ object-fit: contain;
+}
+
+
+textarea{
+  color:white;
+}
+
+>>>>>>> 4156994af3b670a2e67b4189ba47b5836a9e9100

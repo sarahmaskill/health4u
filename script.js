@@ -1,3 +1,4 @@
+  
 //Add Dropdown for Body Parts
 var selectBP = document.getElementById("selectBP");
 var bodypartArray = [  "back",
