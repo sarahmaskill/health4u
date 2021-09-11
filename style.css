@@ -13,12 +13,8 @@ img{
  object-fit: contain;
 }
 
-#box1{
-background: white;
-margin-bottom: 40px;
+
+textarea{
+  color:white;
 }
 
-#box2 {
-background: white;
-padding-bottom: 300px  
-}
