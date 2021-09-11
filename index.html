@@ -11,26 +11,30 @@
 <body>
 
 
-    <header class="">
+    <header class="center-align">
         <h1>Health4U</h1>
     </header>
 
 
-    <nav class="">
+    <nav class="center-align">
     </nav>
 
     
 <section class="parent-container">
 
-     <div class="container-logo">
-          <img src="/Users/wafamohessin/Desktop/health4u/mainpage/ProjectMock-up-Logo-08.png">
-        </div>
+     
     
     <div id="timer">
-    
+       
         <h1 id="headline">Countdown to my exercise:</h1>
+        <div class="containerText">
+            <p id="hours-label" class="label">Hours</p>
+            <p id="minutes-label" class="label">Minutes</p>
+            <p id="seconds-label" class="label">Seconds</p>
+      </div>
     
           <div class= "containerNumber">
+            
           <input id="hours" type="number" max="99" min="0" placeholder="0"class="time">
           <p class="semicolon">:</p>
     
@@ -39,46 +43,44 @@
     
           <input id="seconds" type="number" max="60" sec="0" placeholder="0" class="time">
             </div>
-    </div>
-    <div class="containerText">
-          <p id="houres-label" class="label">Hours</p>
-          <p id="minutes-label" class="label">Minutes</p>
-          <p id="seconds-label" class="label">Seconds</p>
-    </div>
-    
     
     <div class="section-timer">
           <button id="start" class="btn">Start</button>
-          <button id="reset" class="btn">Rest</button>
+          <button id="reset" class="btn">Reset</button>
           </div>
+    </div>
     </section>
+    <br><br>
     
    <div id="left side" class="active-container">
-    <div class= "" id="exerciseSearch">
-        <h2>Find Your Workout!</h2>
-        <div class="">
-            <select id="selectBP">
-            </select>
-            <label>Bodypart</label>
-            <button type="button" id="bodypartBTN" class="buttons are-medium">Search By Bodypart
-            </button>
-          </div>
-          <div id = "bpResult"></div>
-          <div class="">
-            <select id="selectEquipment">
-            </select>
-            <label>Equipment</label>
-            <button type="button" id="equipmentBTN" class="buttons are-medium">Search By Equipment
-            </button>
-            <div id = "equipmentResult"></div>
-          </div>
-        <button type="button" id="searchButton" class="buttons are-medium">Random Search</button>
-        <div id="exercise">
+        <div class= "" id="exerciseSearch">
+            <h2>Find Your Workout!</h2>
+            <div class="">
+                <select id="selectBP">
+                </select>
+                <label>Bodypart</label>
+                <button type="button" id="bodypartBTN" class="buttons are-medium">Search By Bodypart
+                </button>
+            </div>
+            <div id = "bpResult"></div>
+            <div class="">
+                <select id="selectEquipment">
+                </select>
+                <label>Equipment</label>
+                <button type="button" id="equipmentBTN" class="buttons are-medium">Search By Equipment
+                </button>
+                <div id = "equipmentResult"></div>
+            </div>
+            <button type="button" id="searchButton" class="buttons are-medium">Random Search</button>
+            <div id="exercise">
+            </div>
         </div>
+   </div>
+   <br><br>
 
 
 
-</div>
+
 
 
     <div class="" id="journal">
@@ -107,26 +109,29 @@
     <div id="Weather" class=>
         <h2 id="location"></h2>
         <div id="date"><h3>Date</h3></div>
-        <div ><img id="conditionIcon"></div>
+        <div><img id="conditionIcon"></div>
         <h3>Description</h3>
         <div id="description"></div>
         <h3>Tempature:</h3>
         <h2 id="temp"></h2>
         <h3>Humidity</h3>
         <div id="humidity"></div>
+    
 
 </div>
 <div id="spotify player">
     <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DWUSyphfcc6aL?theme=0" width="100%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 </div>
-
+<div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="timerscript.js"></script>
     <script src="script.js"></script>
 </div>
-<footer>
-<h3>©Denzel Wallace, Sarah Maskill, and Wafa Mohessin</h3>
-</footer>
 </body>
+<footer>
+<h5>©Denzel Wallace, Sarah Maskill, and Wafa Mohessin</h5>
+</footer>
+
 </html>
