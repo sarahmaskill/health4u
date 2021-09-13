@@ -29,6 +29,7 @@
 
 .container-logo {
   margin: 0px 30px;
+
 }
 
 .container-logo img {
@@ -71,6 +72,7 @@ input{
 }
 
 #hours, #minutes, #seconds{
+
     fill: none;
     background: none;
     border: none;
@@ -187,7 +189,6 @@ background-color: #c9c9c9;
 .column3{
   width: 600px;
   background-color: #623965;
-}
 
 .workout{
 font-size: 45px;
@@ -239,7 +240,6 @@ margin: 15px 10px 20px 10px;
   justify-content: center;
   flex-wrap: wrap;
   margin-top: 50px;
-
 }
 
 
@@ -267,7 +267,6 @@ margin: 15px 10px 20px 10px;
   background-color: rgb(211, 195, 192);
 }
 
-
 .container-weathermap{
   width: 600px;
   background-color: #623965;
@@ -289,7 +288,3 @@ margin: 15px 10px 20px 10px;
   background-color: #c9c9c9;
 }
 
-
-
-
- 
