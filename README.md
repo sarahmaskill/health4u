@@ -3,13 +3,15 @@
 Health4U is a fitness app that will help users find exercises and track their fitness journey.
 ## Authors
 ​
-- [@sarahmaskill](https://www.github.com/sarahmaskill)
+- [@SarahMaskill](https://www.github.com/sarahmaskill)
+- [@DenzelWallace](https://github.com/zjuicem)
+- [@WafaMohessin](https://github.com/WafaMohessin)
 ​
 ​
   
 ## Screenshots
 ​
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](./screenshot.png)
 ​
   
 ## Acknowledgements
@@ -38,8 +40,7 @@ Health4U is a fitness app that will help users find exercises and track their fi
   
 ## Lessons Learned
 ​
-While building this app I learned how to properly fetch server side API data. 
-I also furthered my knowledge in appending html using Javascript. 
-I still need to work on my abilty to use local storage to store and retireve data. 
+While building this app we faced some challenges along the way. The API we selected has some limitations on filtering, so we had to adjust our app to work within those limitations.  
+This project also helped us learn how to better work with other developers and how to solve merge conflicts. Working together on a single page can be challenging, but with open communication solving problems is easy. 
 ​
   
