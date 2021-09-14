@@ -1,18 +1,101 @@
+:root{
+    --paradise-pink: #ef476fff;
+    --dark-blue-gray: #6c6ea0ff;
+    --orange-yellow-crayola: #ffd166ff;
+    --mantis: #83d483ff;
+    --caribbean-green: #06d6a0ff;
+    --blue-ncs: #118ab2ff;
+    --midnight-green-eagle-green: #073b4cff;
+}
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    background: var(--midnight-green-eagle-green);
+    font-weight: bold;
+    color: var(--midnight-green-eagle-green);
+}
+h2{
+    font-size: large;
+    text-align: center;
+}
 #rightside {
-    background: cadetblue;
+    background: var(--midnight-green-eagle-green);
 }
 #leftside {
-    background: cornflowerblue;
+    background: var(--midnight-green-eagle-green);
 }
 .column {
-    padding: 40px
+    padding: 10px
 }
-.select {
+/* .select {
     padding:30px
-}
-.button {
-    padding:10px
-}
+} */
 #spotifyplayer{
-    padding:20px
+    padding:20px;
+    margin: 10px;
+    background: var(--blue-ncs);
+}
+.semicolon {
+    width: 50px;
+    align-items: center;
+    background-color:none;
+    font-size: 40px;
+    text-align: center;
+  
+  }
+.section-timer{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+  }
+.label{
+    font-family: Arial;
+    font-size: 30px;
+    font-style: bold;
+    margin-top: 0px;
+    padding: 0px 10px 0px 10px;
+  }
+#hours, #minutes, #seconds{
+      fill: none;
+      background: none;
+      border: none;
+      padding: 0px;
+      margin: 0px;
+  }
+input{
+    width: 75px;
+    height: 100px;
+    font-size: 70px;
+    text-align: center;
+  }  
+
+h1{
+    font-size: xx-large;
+    margin: 15px 10px 15px 10px;
+    font-weight: bold;
+    }
+    
+p{
+    text-align: justify;
+    margin: 15px 10px 20px 10px;
+    }
+.card{
+        margin-bottom: 10px;
+    }
+#exerciseSearch{
+background: var(--orange-yellow-crayola);
+}
+.weatherCard{
+background: var(--dark-blue-gray);
+}
+#journal{
+background: var(--mantis);
+}
+
+.timer{
+background: var(--paradise-pink);   
+}
+label{
+    font-size: xx-large;
 }
