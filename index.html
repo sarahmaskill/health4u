@@ -43,7 +43,6 @@
                 <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DWUSyphfcc6aL?theme=0" width="100%" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
             </div>
             </div>
-    </div>
      <div class="column" id="leftside" >
             <h1 id="headline">Countdown to my exercise:</h1>
         <div class="containerText columns is-mobile">
@@ -62,20 +61,16 @@
             <button id="start" class="btn">Start</button>
             <button id="reset" class="btn">Reset</button>
             </div>
-            <div id="journal">
-                <h2>Track Your Workout!</h2>
-                <textarea id='box1'></textarea>
-                <textarea id='box2'> 
-                </textarea>
-                <button class="buttons are-medium" onclick='onSubmitClick();'>Log my progress</button>
-                <script>
-                    function onSubmitClick() {
-                        var box1 = document.getElementById('box1');
-                        var box2 = document.getElementById('box2'); 
-                        box2.value= box2.value +" "+ box1.value; localStorage
-                    }
-                </script>
             </div>
+    <div class="" id="jounal">
+        <form id="application">
+            <label for='box1'>My workout</label>
+            <input type='text' id='box1' My workout='box1' /><br>
+            <label for='box2'>Progress</label>
+            <textarea id='box2' name='Progress'></textarea>
+            <button class="buttons are-medium">Log my progress</button>
+        </form>
+    </div>
             <div id="searchCol" class="inputWeather container-weathermap">
                 <h2>Search for a City</h2>
                 <input type="text" placeholder="City Name" id="cityName">

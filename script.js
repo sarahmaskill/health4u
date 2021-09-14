@@ -1,4 +1,4 @@
-  
+var journalform= document.getElementById("application") 
 //Add Dropdown for Body Parts
 var selectBP = document.getElementById("selectBP");
 var bodypartArray = [  "","back",
@@ -185,11 +185,26 @@ function update() {
     document.getElementById('target').value = document.getElementById('source').value;
 }
 
-//Weather Section
-var apiKey = "dd1155503169dbd265f7df771042e355"
-var city = document.getElementById("cityName").value
-var searchBTN = document.getElementById("searchBTN")
+    box1.addEventListener('input', function () {
+        localStorage.setItem('box1' , box1.value);
+    }, false);
 
+    box2.addEventListener('input', function () {
+        localStorage.setItem('box2' , box2.value);
+    }, false);
+    
+    
+
+
+function onSubmitClick(event) {
+    event.preventDefault()
+    console.log("testapp");
+    var box1 = document.getElementById('box1');
+    var box2 = document.getElementById('box2'); 
+    box2.value= box2.value +" "+ box1.value;
+ }
+
+ journalform.addEventListener("submit", onSubmitClick)
 //fetch current weather for a city name
 function currentWeather(cityName){
 fetch('https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&units=imperial&appid=' + apiKey)
