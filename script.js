@@ -205,6 +205,14 @@ function onSubmitClick(event) {
  }
 
  journalform.addEventListener("submit", onSubmitClick)
+
+
+//Weather Section
+var apiKey = "dd1155503169dbd265f7df771042e355"
+var city = document.getElementById("cityName").value
+var searchBTN = document.getElementById("searchBTN")
+
+
 //fetch current weather for a city name
 function currentWeather(cityName){
 fetch('https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&units=imperial&appid=' + apiKey)
@@ -226,7 +234,7 @@ function drawWeather( d ) {
     var iconNumber = d.weather[0].icon
     document.getElementById("conditionIcon").src="http://openweathermap.org/img/wn/" + iconNumber +"@2x.png"
 	document.getElementById('description').innerHTML = d.weather[0].description;
-	document.getElementById('temp').innerHTML = d.main.temp;
+	document.getElementById('temp').innerHTML = d.main.temp + "°";
 	document.getElementById('location').innerHTML = d.name;
     document.getElementById('humidity').innerHTML = d.main.humidity + "%";
 
