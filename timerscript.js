@@ -41,15 +41,12 @@ function stopTimer() {
 
 start.addEventListener('click', function(){
     //intialize the var startTimer
-    function startInterval() {
-
+    stopTimer()
         startTimer=setInterval(function(){
             timer();
         },1000);
-    }
-    startInterval()
-})
 
+})
 
 reset.addEventListener('click', function(){
     hours.value =0

@@ -1,0 +1,18 @@
+#rightside {
+    background: cadetblue;
+}
+#leftside {
+    background: cornflowerblue;
+}
+.column {
+    padding: 40px
+}
+.select {
+    padding:30px
+}
+.button {
+    padding:10px
+}
+#spotifyplayer{
+    padding:20px
+}
